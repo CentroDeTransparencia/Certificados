@@ -59,3 +59,5 @@ heroku ps:scale web=1
 heroku open
 ```
 last instruction is to see the project online
+
+This was based on the [Heroku for Sharing Public Dash Apps for Free](https://dash.plotly.com/deployment) tutorial.
