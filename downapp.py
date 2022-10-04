@@ -15,8 +15,9 @@ if not os.path.exists(UPLOAD_DIRECTORY):
 # Normally, Dash creates its own Flask server internally. By creating our own,
 # we can create a route for downloading files directly:
 server = Flask(__name__)
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(server=server, external_stylesheets=external_stylesheets)
+# external_stylesheets = ['style.css']
+app = dash.Dash(server=server)
+# was app = dash.Dash(server=server, external_stylesheets=external_stylesheets)
 
 
 @server.route("/download/<path:path>")
@@ -27,6 +28,10 @@ def download(path):
 
 app.layout = html.Div(
     [
+        html.Link(
+            rel='stylesheet',
+            href='/style.css'
+        ),
         html.H1('Certificado del Evento'),
         html.Div(children='''
                 Descargue aquí su certificado.
