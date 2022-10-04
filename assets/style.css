@@ -1,6 +1,12 @@
-html *
-{
+html *{
+    font-family: outfit;
+}
+
+h1{
     color: tomato;
-    /*font-family: Outfit;
-    src:url("Outfit-Medium.ttf");*/
+}
+
+@font-face {
+    font-family: outfit;
+    src: url("Outfit-Medium.ttf");
 }

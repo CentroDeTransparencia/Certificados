@@ -30,8 +30,10 @@ app.layout = html.Div(
     [
         html.Link(
             rel='stylesheet',
+            type='text/css',
             href='/style.css'
         ),
+        html.Img(src='assets/head1.jpg'),
         html.H1('Certificado del Evento'),
         html.Div(children='''
                 Descargue aquí su certificado.
@@ -49,7 +51,7 @@ app.layout = html.Div(
 
         html.Ul(id="file-list"),
     ],
-    style={"max-width": "500px"},
+    style={"maxWidth": "500px"},
 )
 
 
