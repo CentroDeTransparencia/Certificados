@@ -39,8 +39,7 @@ app.layout = html.Div(
                 Descargue aquí su certificado del evento: \"Centro
                 de Transparencia: La Información de la Exploración
                 de Yacimientos No Convencionales en un Contexto Social
-                Complejo\" llevado a cabo en julio 27 de 2022 puede
-                obtenerse en esta página.
+                Complejo\" llevado a cabo en julio 27 de 2022.
             '''),
         html.Br(),
         html.Div(children='''
