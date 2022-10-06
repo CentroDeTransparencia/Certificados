@@ -51,7 +51,6 @@ if __name__ == '__main__':
 Finally
 ```bash
 heroku create downloads02
-git push heroku master
 git add .
 git commit -m 'Initial app boilerplate'
 git push heroku master
@@ -59,5 +58,7 @@ heroku ps:scale web=1
 heroku open
 ```
 last instruction is to see the project online
+
+currently can be found @ https://certificadoscdt.herokuapp.com/
 
 This was based on the [Heroku for Sharing Public Dash Apps for Free](https://dash.plotly.com/deployment) tutorial.
