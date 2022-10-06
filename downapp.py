@@ -1,11 +1,12 @@
 import os
 from urllib.parse import quote as urlquote
 
-from flask import Flask, send_from_directory
 import dash
 from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output, State
+from flask import Flask, send_from_directory
+import dash_bootstrap_components as dbc
 
 UPLOAD_DIRECTORY = "app_uploaded_files"
 
@@ -16,7 +17,7 @@ if not os.path.exists(UPLOAD_DIRECTORY):
 # we can create a route for downloading files directly:
 server = Flask(__name__)
 # external_stylesheets = ['style.css']
-app = dash.Dash(server=server)
+app = dash.Dash(server=server, external_stylesheets=[dbc.themes.BOOTSTRAP])
 # was app = dash.Dash(server=server, external_stylesheets=external_stylesheets)
 
 
@@ -42,16 +43,17 @@ app.layout = html.Div(
                 Complejo\" llevado a cabo en julio 27 de 2022.
             '''),
         html.Br(),
+        html.Br(),
         html.Div(children='''
                 Ingrese su número de cédula y presione \"enviar\".        
             '''),
-        html.Div(dcc.Input(id='upload-data', type='text')),
-        html.Button('Enviar', id='submit-val', n_clicks=0, type="submit"),
+        dbc.Input(placeholder="Sin puntos ni comas", size="lg", className="mb-3", id='upload-data', type='text'),
+        dbc.Button("Enviar", color="danger", className="me-1", id='submit-val', n_clicks=0, type="submit"),
         html.Div(id='container-button-basic'),
 
-        html.Ul(id="file-list"),
+        html.P(id="file-list"),
     ],
-    style={"maxWidth": "500px"},
+    className="main_div",
 )
 
 
@@ -85,6 +87,7 @@ def update_output(uploaded_filenames, value):
         filename = str(value) + ".pdf"
         if filename in files:
             return html.Div([
+                html.Br(),
                 html.Div("Descargue el certificado en el siguiente enlace:"),
                 html.Br(),
                 file_download_link(filename),
@@ -95,8 +98,9 @@ def update_output(uploaded_filenames, value):
         elif value is None:
             return html.Div()
         else:
-            return html.Div("Desgraciadamente la cédula # " + str(value) +
-                            " no se encuentra en la lista.", id="ced")
+            return [html.Br(),
+                    html.Div("Desgraciadamente la cédula # " + str(value) +
+                            " no se encuentra en la lista.", id="ced")]
 
         # return [html.Li(file_download_link(filename)) for filename in files]
 
