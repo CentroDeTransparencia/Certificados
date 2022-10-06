@@ -51,7 +51,7 @@ if __name__ == '__main__':
 Finally
 ```bash
 heroku create downloads02
-git push heroku main
+git push heroku master
 git add .
 git commit -m 'Initial app boilerplate'
 git push heroku master
