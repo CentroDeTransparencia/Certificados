@@ -36,7 +36,7 @@ app.layout = html.Div(
         ),
         html.Img(src='assets/head1.jpg'),
         html.H1('Certificado del Evento'),
-        html.Div(children='''
+        html.Div(id="texto", children='''
                 Descargue aquí su certificado del evento: \"Centro
                 de Transparencia: La Información de la Exploración
                 de Yacimientos No Convencionales en un Contexto Social
@@ -48,7 +48,7 @@ app.layout = html.Div(
                 Ingrese su número de cédula y presione \"enviar\".        
             '''),
         dbc.Input(placeholder="Sin puntos ni comas", size="lg", className="mb-3", id='upload-data', type='text'),
-        dbc.Button("Enviar", color="danger", className="me-1", id='submit-val', n_clicks=0, type="submit"),
+        dbc.Button("Enviar", color="tomato", className="me-1", id='submit-val', n_clicks=0, type="submit"),
         html.Div(id='container-button-basic'),
 
         html.P(id="file-list"),
