@@ -10,3 +10,8 @@ h1{
     font-family: outfit;
     src: url("Outfit-Medium.ttf");
 }
+
+img {
+  width: 100%;
+  height: auto;
+}

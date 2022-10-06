@@ -36,10 +36,11 @@ app.layout = html.Div(
         html.Img(src='assets/head1.jpg'),
         html.H1('Certificado del Evento'),
         html.Div(children='''
-                Descargue aquí su certificado.
-                El certificado del evento: \"Centro de Transparencia: La Información de la
-                Exploración de Yacimientos No Convencionales en un Contexto Social Complejo\"
-                llevado a cabo en julio 27 de 2022 puede obtenerse en esta página.
+                Descargue aquí su certificado del evento: \"Centro
+                de Transparencia: La Información de la Exploración
+                de Yacimientos No Convencionales en un Contexto Social
+                Complejo\" llevado a cabo en julio 27 de 2022 puede
+                obtenerse en esta página.
             '''),
         html.Br(),
         html.Div(children='''
