@@ -1,4 +1,4 @@
-# Certificados02
+# Certificados
 
 These are the instructions to deploy the project into [Heroku](https://www.heroku.com/). 
 
